@@ -18,7 +18,7 @@ class MyClassificationPipeline {
     if (this.instance === null) {
 
       // NOTE: Uncomment this to change the cache directory
-      // env.cacheDir = './.cache';
+      env.cacheDir = './.cache';
 
       this.instance = pipeline(this.task, this.model, { progress_callback });
     }
