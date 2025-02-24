@@ -1,0 +1,20 @@
+{
+  "name": "xenova-sentiment",
+  "version": "1.0.0",
+  "description": "Sentiment Analysis with transformer.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "deploy": "gcloud app deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "20.x.x"
+  },
+  "author": "Syahrul Aswan",
+  "license": "ISC",
+  "dependencies": {
+    "@xenova/transformers": "^2.17.2"
+  },
+  "type": "module"
+}
