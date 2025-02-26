@@ -2,7 +2,7 @@ FROM node:20.18-bullseye
 
 WORKDIR /app
 
-COPY package* .
+COPY package* ./
 RUN npm install
 
 COPY . .
