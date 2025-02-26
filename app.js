@@ -18,7 +18,7 @@ class MyClassificationPipeline {
     if (this.instance === null) {
 
       // NOTE: Uncomment this to change the cache directory
-      env.cacheDir = './.cache';
+      // env.cacheDir = './.cache';
 
       this.instance = pipeline(this.task, this.model, { progress_callback });
     }
@@ -49,8 +49,8 @@ const mapNewText = (texts) => {
 
 // Define the HTTP server
 const server = http.createServer();
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = '0.0.0.0';
+const port = parseInt(process.env.PORT) || 3000;
 
 // Listen for requests made to the server
 server.on('request', async (req, res) => {
@@ -62,7 +62,7 @@ server.on('request', async (req, res) => {
   const { text, sourceLang = 'id', targetLang = 'en' } = querystring.parse(parsedUrl.query);
 
   // Set the response headers
-  // res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'application/json');
 
   let response;
   let tranlateText = await translateText(text, sourceLang, targetLang);
